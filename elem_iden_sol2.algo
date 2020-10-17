@@ -1,0 +1,28 @@
+ALGORITHM elem_identiq_sol2
+VAR
+    htab1 : HASH_TABLE<CHAR,INTEGER>;
+    htab2 : HASH_TABLE<CHAR,INTEGER>;
+    tab1 : htab1.getkeys();
+    tab2 : htab2.getkeys();
+    i,j,a,b : INTEGER;
+    sum : INTEGER := 0;
+BEGIN
+    Write('donner un tableau de hachage  numéro 1');
+    Read(tab1);
+    Write('donner un tableau de hachage  numéro 2');
+    Read(tab2);
+    FOR i FROM 0 TO htab1.length-1 STEP 1  DO
+    FOR j FROM 0 TO htab2.length-1 STEP 1  DO
+    IF (htab1.get(tab1[i]) = htab2.get(tab2[j])&& htab1.get(tab1[i])<>htab1.get(tab1[a]) THEN
+        sum := sum + htab1.get(tab1[i]);
+    END_IF
+    END_FOR
+    END_FOR
+    FOR j FROM 0 TO htab2.length-1 STEP 1  DO
+    FOR i FROM 0 TO htab1.length-1 STEP 1  DO
+    IF (htab1.get(tab1[i]) = htab2.get(tab2[j])&& htab2.get(tab2[j])<>htab2.get(tab2[b]) THEN
+        sum := sum + htab2.get(tab2[j]);
+    END_IF
+    END_FOR
+    END_FOR
+END
